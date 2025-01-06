@@ -1,7 +1,7 @@
 open Format 
 let show (pp : formatter -> 'a -> unit) (m : string option) (l : 'a list) : unit =
   let m = match m with None -> "" | Some s -> s in
-  Format.fprintf std_formatter "%s \n %a \n" m 
+  Format.fprintf std_formatter "%s  %a \n\n" m 
     (pp_print_list ?pp_sep:(Some pp_print_space) pp) l
 
 let curry f x y = f (x,y)
