@@ -18,9 +18,9 @@ let tail (Co (h,s)) = snd (h s)
 let from_list (l : 'a list) (a :'a) : ('a, 'a list) co =
     Co ((fun l -> match l with [] -> (a,l) | h::t -> (h, t)), l)
   
-let rec to_list (Co (f,i) : ('a,'b) co) (n : int) = 
+(* let rec to_list (Co (f,i) : ('a,'b) co) (n : int) = 
   if n > 0 then 
     let (a, s') = f i in 
       a::(to_list (Co (f, s')) (n-1))
-  else []
+  else [] *)
     
